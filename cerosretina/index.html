@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        var web         = "",
+            embed       = "",
+            ipad        = "",
+            facebook    = "";
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=1150">
+
+	<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="container">
+        <div id="client-logo"></div>
+        <div id="content">
+
+            <div id="devices">
+                <!-- Ceros link -->
+                <div class="device">
+                    <a class="web-link" href="" target="_blank">
+                        <div id="web-device-container">
+                            <div id="web-content"></div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Embed link -->
+                <div class="device">
+                    <a class="embed-link" href="" target="_blank">
+                        <div id="embedded-device-container">
+                            <div id="embed-content"></div>
+                        </div>
+                    </a>
+                </div>
+                <!-- iPad link -->
+                <div class="device">
+                    <a class="ipad-link" href="" target="_blank">
+                        <div id="ipad-device-container">
+                            <div id="ipad-content"></div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Facebook link -->
+                <div class="device">
+                    <a class="fb-link" href="" target="_blank">
+                        <div id="facebook-device-container">
+                            <div id="facebook-content"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <hr id="line" />
+            <div id="icon-row">
+                <div class="icon">
+                    <a class="web-link" href="" target="_blank">
+                        <div id="web-icon"></div>
+                    </a>
+                </div>
+                <div class="icon">
+                    <a class="embed-link" href="" target="_blank">
+                        <div id="embedded-icon"></div>
+                    </a>
+                </div>
+                <div class="icon">
+                    <a class="ipad-link" href="" target="_blank">
+                        <div id="ipad-icon"></div>
+                    </a>
+                </div>
+                <div class="icon">
+                    <a class="fb-link" href="" target="_blank">
+                        <div id="facebook-icon"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="icon-row-labels">
+                <div class="label" id="label-web">Web</div>
+                <div class="label" id="label-embed">Embedded</div>
+                <div class="label" id="label-ipad">iPad</div>
+                <div class="label" id="label-facebook">Facebook</div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="ceros-logo"></div>
+            <div id="message">For demonstration purposes only.</div>
+        </div>
+	</div>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.web-link').attr("href", web);
+            $('.embed-link').attr("href", embed);
+            $('.ipad-link').attr("href", ipad);
+            $('.fb-link').attr("href", facebook);
+
+            // Ensures the client logo is correctly positioned regardless of size.
+            var img = $("<img />").attr('src', 'client/logo@2x.png').load(function() {
+                var imgH = $(img)[0].height / 2;
+                var imgW = $(img)[0].width / 2;
+
+                $("#client-logo").css("background", "url('client/logo@2x.png') 50% no-repeat");
+                $("#client-logo").css("background-size", imgW + "px " + imgH + "px");
+            });
+        })
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36476507-5']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
+    
+</body>
+</html>

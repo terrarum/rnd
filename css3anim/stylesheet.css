@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica;
+}
+
+body {
+    min-height:100%;
+}
+
+#title {
+    width: 200px;
+    text-align: center;
+    margin: 100px auto;
+    line-height: 30px;
+}
+
+#container {
+    position: relative;
+    width: 374px;
+    height: 420px;
+    margin: auto;
+    margin-top: 1050px;
+    margin-bottom: 50px;
+}
+
+.icon {
+    position: absolute;
+    z-index: 40;
+}
+
+.line {
+    position: absolute;
+    z-index: 39;
+}
+
+#cloud {
+    position: absolute;
+    background: url('img/cloud-icon@2x.png') no-repeat;
+    background-size: 170px;
+    height: 170px;
+    width: 170px;
+    top: 125px;
+    left: 102px;
+    z-index: 50;
+}
+
+#imac {
+    background: url('img/imac-icon@2x.png') no-repeat;
+    background-size: 70px;
+    height: 70px;
+    width: 70px;
+    top: 0px;
+    left: 152px;
+}
+
+#facebook {
+    background: url('img/facebook-icon@2x.png') no-repeat;
+    background-size: 70px;
+    height: 69px;
+    width: 70px;
+    top: 85px;
+    right: 0px;
+}
+
+#tumblr {
+    background: url('img/tumblr-icon@2x.png') no-repeat;
+    background-size: 70px;
+    height: 69px;
+    width: 70px;
+    bottom: 85px;
+    right: 0px;
+}
+
+#iphone {
+    background: url('img/iphone-icon@2x.png') no-repeat;
+    background-size: 70px;
+    height: 69px;
+    width: 70px;
+    bottom: 0px;
+    left: 152px;
+}
+
+#ipad {
+    background: url('img/ipad-icon@2x.png') no-repeat;
+    background-size: 70px;
+    height: 69px;
+    width: 70px;
+    bottom: 85px;
+    left: 0px;
+}
+
+#laptop {
+    background: url('img/laptop-icon@2x.png') no-repeat;
+    background-size: 70px;
+    height: 69px;
+    width: 70px;
+    top: 85px;
+    left: 0px;
+}
+
+#imac-line {
+    background: url('img/vertical@2x.png') no-repeat;
+    background-size: 5px 50px;
+    height: 50px;
+    width: 5px;
+    top: 72px;
+    left: 185px;
+}
+
+#facebook-line {
+    background: url('img/diagonal-2@2x.png') no-repeat;
+    background-size: 44px 27px;
+    height: 27px;
+    width: 44px;
+    top: 138px;
+    right: 68px;
+}
+
+#tumblr-line {
+    background: url('img/diagonal-1@2x.png') no-repeat;
+    background-size: 44px 27px;
+    height: 27px;
+    width: 44px;
+    bottom: 138px;
+    right: 68px;
+}
+
+#iphone-line {
+    background: url('img/vertical@2x.png') no-repeat;
+    background-size: 5px 50px;
+    height: 50px;
+    width: 5px;
+    bottom: 74px;
+    left: 185px;
+}
+
+#ipad-line {
+    background: url('img/diagonal-2@2x.png') no-repeat;
+    background-size: 44px 27px;
+    height: 27px;
+    width: 44px;
+    bottom: 138px;
+    left: 68px;
+}
+
+#laptop-line {
+    background: url('img/diagonal-1@2x.png') no-repeat;
+    background-size: 44px 27px;
+    height: 27px;
+    width: 44px;
+    top: 138px;
+    left: 68px;
+}
+
+@-webkit-keyframes imac {
+    0% {
+        top: 175px;
+        left: 152px;
+    }
+    100% {
+        top: 0px;
+        left: 152px;
+    }
+}
+@keyframes imac {
+    0% {
+        top: 175px;
+        left: 152px;
+    }
+    100% {
+        top: 0px;
+        left: 152px;
+    }
+}
+
+@-webkit-keyframes facebook {
+    0% {
+        top: 175px;
+        right: 152px;
+    }
+    100% {
+        top: 85px;
+        right: 0px;
+    }
+}
+@keyframes facebook {
+    0% {
+        top: 175px;
+        right: 152px;
+    }
+    100% {
+        top: 85px;
+        right: 0px;
+    }
+}
+
+@-webkit-keyframes tumblr {
+    0% {
+        bottom: 175px;
+        right: 152px;
+    }
+    100% {
+        bottom: 85px;
+        right: 0px;
+    }
+}
+@keyframes tumblr {
+    0% {
+        bottom: 175px;
+        right: 152px;
+    }
+    100% {
+        bottom: 85px;
+        right: 0px;
+    }
+}
+
+@-webkit-keyframes iphone {
+    0% {
+        bottom: 175px;
+        right: 152px;
+    }
+    100% {
+        bottom: 0px;
+        left: 152px;
+    }
+}
+@keyframes iphone {
+    0% {
+        bottom: 175px;
+        right: 152px;
+    }
+    100% {
+        bottom: 0px;
+        left: 152px;
+    }
+}
+
+@-webkit-keyframes ipad {
+    0% {
+        bottom: 175px;
+        left: 152px;
+    }
+    100% {
+        bottom: 85px;
+        left: 0px;
+    }
+}
+@keyframes ipad {
+    0% {
+        bottom: 175px;
+        left: 152px;
+    }
+    100% {
+        bottom: 85px;
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes laptop {
+    0% {
+        top: 175px;
+        left: 152px;
+    }
+    100% {
+        top: 85px;
+        left: 0px;
+    }
+}
+@keyframes laptop {
+    0% {
+        top: 175px;
+        left: 152px;
+    }
+    100% {
+        top: 85px;
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes imac-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes imac-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@-webkit-keyframes facebook-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes facebook-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@-webkit-keyframes tumblr-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes tumblr-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@-webkit-keyframes iphone-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes iphone-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@-webkit-keyframes ipad-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes ipad-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@-webkit-keyframes laptop-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes laptop-line {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

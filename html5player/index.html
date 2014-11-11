@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<link rel=stylesheet href="stylesheet.css" type="text/css">	
+	<script type="text/javascript" src="controls.js"></script>
+	<title>HTML5 Player</title>
+</head>
+<body>
+<div id="content">
+	<h1>HTML5 Video Player - Local - Custom Controls</h1>
+	
+	<video class="player" id="video1" width="663" height="352">
+		<source src="snowvid.mp4" type="video/mp4"></source>
+		Your browser does not support HTML5 video.
+	</video>
+	<br />
+	<div class="controls" style="margin-top: 20px;" target="video1">
+		<div class="controlItem button beginning">
+			|<<
+		</div>
+		<div class="controlItem button stepBack">
+			<-
+		</div>
+		<div class="controlItem button playPause">
+			>
+		</div>
+		<div class="controlItem button stepForward">
+			->
+		</div>
+		<div class="controlItem button fastForward">
+			>>
+		</div>
+		<div class="controlItem timeDisplay" id="timeDisplayvideo1">
+			<div class="controlItem progressContainer" id="progressContainervideo1">
+				<div class="progressBar" id="progressBarvideo1"></div>
+				<div class="loadingBar" id="loadingBarvideo1"></div>
+			</div>
+			<div class="controlItem timers">
+				<div class="timerBoxes" id="currentTimevideo1">_:__</div>
+				<div class="timerBoxes" id="durationvideo1">__:__</div>
+			</div>
+		</div>
+		<div class="controlItem button fullscreen">
+			<small>FULL</small>
+		</div>
+	</div>
+	
+	<h1>HTML5 Audio Player - Local - Custom Controls</h1>
+	
+	<audio class="player" id="audio1">
+		<source src="masamune.mp3" type="audio/mpeg"></source>
+		Your browser does not support HTML5 audio.
+	</audio>
+	<br />
+	<div class="controls" style="margin-top: 20px;" target="audio1">
+		<div class="controlItem button beginning">
+			|<<
+		</div>
+		<div class="controlItem button stepBack">
+			<-
+		</div>
+		<div class="controlItem button playPause">
+			>
+		</div>
+		<div class="controlItem button stepForward">
+			->
+		</div>
+		<div class="controlItem button fastForward">
+			>>
+		</div>
+		<div class="controlItem timeDisplay" id="timeDisplayaudio1">
+			<div class="controlItem progressContainer" id="progressContaineraudio1">
+				<div class="progressBar" id="progressBaraudio1"></div>
+				<div class="loadingBar" id="loadingBaraudio1"></div>
+			</div>
+			<div class="controlItem timers">
+				<div class="timerBoxes" id="currentTimeaudio1">_:__</div>
+				<div class="timerBoxes" id="durationaudio1">__:__</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

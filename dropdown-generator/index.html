@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial;
+        }
+
+        #container {
+            width: 800px;
+            margin: 20px auto;
+        }
+
+        textarea {
+            margin: 5px;
+            width: 788px;
+            height: 150px;
+            display: block;
+            overflow: scroll;
+        }
+
+        .main {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+            text-align: center;
+        }
+
+        #buttonContainer {
+            text-align: center;
+            margin: 20px 0 20px 0;
+        }
+
+        button {
+            width: 100px;
+            padding: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="inputContainer">
+        <div class="main">Wraps a list of items in &lt;option/&gt; tags.</div>
+        <div class="title">Input</div>
+        <div class="subtitle">Enter list here, one item per line.</div>
+        <textarea name="" id="list-input"></textarea>
+    </div>
+    <div id="buttonContainer">
+        <button id="run">Go</button>
+    </div>
+    <div id="outputContainer">
+        <div class="title">Output</div>
+         <textarea id="output"></textarea>
+    </div>
+</div>
+
+
+
+<script>
+//    <li><a role="menuitem" tabindex="-1" data-value="" href="#">2014</a></li>
+    $(function() {
+        $('#run').on("click", function() {
+            $('#output').html('')
+            var list = $('#list-input').val().split('\n');
+            for (var i = 0; i < list.length; i++) {
+//                $('#output').append('&lt;li&gt;&lt;a role="menuitem" tabindex="-1" data-value="' + list[i] +'" href="#"&gt;' + list[i]  + '&lt;/a&gt;&lt;/li&gt;')
+                $('#output').append('&lt;option data-value="' + list[i] +'"&gt;' + list[i]  + '&lt;/option&gt;')
+
+                $('#output').append('\n')
+            }
+        })
+
+        $('#output').on("click", function() {
+            this.select();
+        })
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Drag and Drop</title>
+		<style>
+
+			body {
+				font-family: Helvetica, Verdana, sans-serif;
+				-webkit-user-select: none;
+			}
+
+			.item-center-text {
+				text-align: center;
+				line-height: 80px;
+			}
+
+			.container {
+				width: 900px;
+				border: 1px solid black;
+				margin: 20px auto;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.position-top-left {
+				float: left;
+			}
+
+			.position-top-right {
+				float: right;
+			}
+
+			.items-container {
+				width: 400px;
+				height: 400px;
+				border: 1px solid red;
+			}
+
+			.targets-container {
+				width: 400px;
+				height: 400px;
+				border: 1px solid yellow;
+			}
+
+			.mouseover {
+				background-color: #00ff99;
+			}
+
+			.item-container {
+				width: 100px;
+				height: 100px;
+				float: left;
+				padding: 10px;
+				box-sizing: border-box;
+			}
+
+			.item {
+				width: 80px;
+				height: 80px;
+				background-color: #0099ff;
+			}
+
+			.item:hover {
+				background-color: #ff0000;
+				cursor: -webkit-grab;
+			}
+
+			.is-grabbing {
+				cursor: -webkit-grabbing;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="items-container position-top-left">
+				<div class="item-container"></div>
+				<div class="item-container">
+					<div class="item item-center-text">1</div>
+				</div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container">
+					<div class="item item-center-text">2</div>
+				</div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+				<div class="item-container"></div>
+			</div>
+			<div class="targets-container position-top-right">
+				
+			</div>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script>
+			$(function() {
+
+				var isDragging = false,			// Is an item currently being dragged?
+					currentItem = null,			// The item being dragged.
+					currentItemParent = null,	// The item's original container.
+					targetContainer = null;		// The container currently under the mouse.
+
+				// Style and update target variables when containers are moused over.
+				$('.item-container').on('mouseover', function() {
+					console.log('container drag')
+					if (isDragging) {
+						targetContainer = this;
+						$(this).addClass('mouseover');
+					}
+					else {
+						currentItemParent = this;
+					}
+				}).on('mouseout', function() {
+					// When the container is moused out, remove styles and remove reference.
+					$(this).removeClass('mouseover');
+					targetContainer = null;
+				});
+
+				// Style items when they are moused over.
+				$('.item').on('mouseover', function() {
+					$(this).addClass('item-mouseover');
+				}).on('mouseout', function() {
+					$(this).removeClass('item-mouseover');
+				});
+
+				// When an item is clicked on, pick it up.
+				$('.item').on('mousedown', function(e) {
+					attachToMouse(this);
+				});
+
+				// If the mouse moves and is dragging an item, update that items position.
+				$(document).on('mousemove', function(e) {
+					if (isDragging) {
+						var x = e.pageX - 40,
+							y = e.pageY - 40;
+
+						$(currentItem).css({
+							left: x,
+							top: y
+						})
+					}
+				}).on('mouseup', function() {
+					// Drop the item whenever the mouse is let go.
+					if (isDragging) {
+						detachFromMouse(currentItem);
+					}
+				});
+
+				// Make the selected item follow the mouse.
+				var attachToMouse = function(item) {
+					currentItem = item;
+
+					// Position the item relative to the mouse.
+					$(currentItem).css({
+						left: $(item).offset().left,
+						top: $(item).offset().top
+					})
+					isDragging = true;
+					// $(currentItem).appendTo('body');
+					$(item).addClass('is-grabbing');
+				};
+
+				// Put the item back down.
+				var detachFromMouse = function() {
+					// If there is a container under the mouse, put the item there.
+					if (targetContainer !== null) {
+						if ($(targetContainer).children().length == 0) {
+							$(currentItem).appendTo(targetContainer);
+						}	
+					}
+					// If there is no container under the mouse, put the item where it came from.
+					else {
+						$(currentItem).appendTo(currentItemParent);
+					}
+					$(currentItem).removeClass('is-grabbing');
+
+					// Clear variables.
+					isDragging = false;
+					currentItem = null;
+				}
+			})
+		</script>
+	</body>
+</html>

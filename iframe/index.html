@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel=stylesheet href="index.css" type="text/css" media=screen>
+</head>
+<body>
+<div id="content">
+    <div class="column" id="column-left">
+        <div class="title">
+            <b>-webkit-transform: scale(.75);</b> links fail
+        </div>
+        <div class="iframe" id="iframe1">
+            <iframe src="iframe.html"></iframe>
+        </div>
+    </div>
+
+    <div class="column" id="column-middle">
+        <div class="title">
+            <b>zoom: 0.75;</b> links ok, contents don't scale
+        </div>
+        <div class="iframe" id="iframe2">
+            <iframe src="iframe.html"></iframe>
+        </div>
+    </div>
+
+    <div class="column" id="column-right">
+        <div class="title">
+            science
+        </div>
+        <div class="iframe" id="iframe3">
+            <iframe src="iframe.html"></iframe>
+        </div>
+    </div>
+</div>
+<a href="#"><div id="link">normal link</div></a>
+</body>
+</html>

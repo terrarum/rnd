@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Monitor</title>
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+    <script src="angular-1.0.0rc12.js"></script>
+    <script src="monitor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="jquery.xml2json.js" type="text/javascript" language="javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="monitor.css">
+  </head>
+  <body>
+
+    <!-- GiantBomb -->
+    <div class='module' ng-controller="GiantBombController">
+      <div class='moduleTitle'>Game Releases</div> <div class='subTitle'>Tracking {{games.length}} games</div>
+      <div id='games' class='moduleContent'>
+        <div ng-repeat="game in games" class='game' ng-class-odd="'odd'" ng-class-even="'even'" ng-class='{last: $last}'>
+          <img class='gameLogo' src='{{game.image.tiny_url}}'>
+          <a href='{{game.site_detail_url}}' class='gameTitle'>{{game.name}}</a>
+          <div class='gameInformation'>
+            <div  class='platforms'>
+              <span ng-repeat="platform in game.platforms">
+                {{platform.name}}<span ng-class='{lastSep: $last}'>,</span>
+              </span>
+            </div> 
+            <div class='releaseDate'>
+              Release date: <strong>{{game.releaseDate}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

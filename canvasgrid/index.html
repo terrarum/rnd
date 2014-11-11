@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Grid Test</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="canvasgrid.js"></script>
+
+    <!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css">-->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+</head>
+<body>
+
+    <div id="content">
+        <div id="title">Canvas Grid Selection Test</div>
+
+        <div id="debug">
+            <div id="debugTitle">
+                Debug Output
+            </div>
+            <table>
+                <tr>
+                    <td>FPS:</td>
+                    <td id="debug-fps"></td>
+                </tr>
+                <tr>
+                    <td>Mouse X:</td>
+                    <td id="debug-mouseX"></td>
+                </tr>
+                <tr>
+                    <td>Mouse Y:</td>
+                    <td id="debug-mouseY"></td>
+                </tr>
+                <tr>
+                    <td>Mouse Click X:</td>
+                    <td id="debug-mouseclickX"></td>
+                </tr>
+                <tr>
+                    <td>Mouse Click Y:</td>
+                    <td id="debug-mouseclickY"></td>
+                </tr>
+                <tr>
+                    <td>Last Selected Square:</td>
+                    <td id="debug-squarename"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="canvas-container">
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+    </div>
+
+</body>
+</html>

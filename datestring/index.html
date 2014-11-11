@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="stylesheet.css">-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="postDate">03 June 2013</td>
+        </tr>
+        <tr>
+            <td class="postDate">31 March 2013</td>
+        </tr>
+        <tr>
+            <td class="postDate">22 December 2012</td>
+        </tr>
+        <tr>
+            <td class="postDate">29 August 2014</td>
+        </tr>
+    </table>
+
+    <!--Hides dates older than 90 days old-->
+    <script type="text/javascript">
+        $(function() {
+            var minus90 = Date.parse(new Date(new Date().setDate(new Date().getDate() - 90)));
+
+            $('.postDate').each(function() {
+                Date.parse($(this).html()) < minus90 ? $(this).hide() : ''
+            })
+        })
+    </script>
+
+</body>
+</html>

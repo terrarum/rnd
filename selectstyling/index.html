@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Styling</title>
+    <link rel="stylesheet" href="../lib/normalize.css">
+
+    <style type="text/css">
+        hr {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            border-top: 1px #aaa solid;
+        }
+
+        #content {
+            margin: 20px;
+        }
+
+        #column-left {
+            padding: 20px;
+            width: 300px;
+        }
+
+        #column-right {
+            width: 700px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        #selected {
+            margin-top: 20px;
+        }
+        .column {
+            /*border: 1px solid black;*/
+            float: left;
+        }
+
+        #menu-container {
+            position: relative;
+        }
+
+        #menu-icon {
+            background: url("selectarrows.png") no-repeat 50% 50%;
+            width: 38px;
+            height: 38px;
+            border-left: 1px solid #898989;
+            position: absolute;
+            right: 0;
+            z-index: 1000;
+        }
+
+        #menu-button {
+            padding: 10px;
+            border: 1px solid #898989;
+            cursor: pointer;
+            position: relative;
+            border-radius: 4px;
+
+            font-size: 14px;
+            font-weight: 700;
+            color: #aaa;
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            background: rgb(241,241,241); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(241,241,241,1) 0%, rgba(201,201,201,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,241,241,1)), color-stop(100%,rgba(201,201,201,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(201,201,201,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(201,201,201,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(201,201,201,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(241,241,241,1) 0%,rgba(201,201,201,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#c9c9c9',GradientType=0 ); /* IE6-9 */
+        }
+
+        #menu-button:active {
+            background: rgb(201,201,201); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(201,201,201,1) 0%, rgba(241,241,241,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(201,201,201,1)), color-stop(100%,rgba(241,241,241,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(201,201,201,1) 0%,rgba(241,241,241,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(201,201,201,1) 0%,rgba(241,241,241,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(201,201,201,1) 0%,rgba(241,241,241,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(241,241,241,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+        }
+
+        #menu {
+            border: 1px solid #999;
+            position: absolute;
+            background: #fff;
+            width: 100%;
+
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+            box-sizing: border-box;         /* Opera/IE 8+ */
+        }
+
+        .menu-item {
+            padding: 10px 15px 10px 15px;
+        }
+
+        .menu-item-selected {
+            background: #fff !important;
+        }
+
+        .optgroup {
+            font-weight: 700;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .option {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-size: 14px;
+        }
+
+        .option:hover {
+            cursor: pointer;
+            background: #009ad2;
+            color: #fff;
+        }
+
+    </style>
+    <script src="../lib/jquery.min.js"></script>
+    <script src="menu.js"></script>
+    <script type="text/javascript">
+        function getCategoryFields(val) {
+//            var val = select.options[select.selectedIndex].value;
+            if(val) {
+                var parts = val.split('/');
+                submissionForm['#category'].value = parts[0];
+                submissionForm['#sub-category'].value = parts[1];
+
+                $("#group-name").html(parts[0]);
+                $("#subgroup-name").html(parts[1]);
+            }
+            else {
+                submissionForm['#category'].value = '';
+                submissionForm['#sub-category'].value = '';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="column" id="column-left">
+        <form id="submissionForm">
+            <input type="hidden" name="action_nonce" value="uh7fe71t7k4u54h3duhi2kh860|1351901324|Iquas6I/de/1lQhF52jgpQ==|d8b39ddbf493560a71e2abb68233fcb43907df08" />
+            <input type="hidden" id="category" name="#category" value="" />
+            <input type="hidden" id="sub-category" name="#sub-category" value="" />
+
+            <select id="category-select" class="select-input" onchange="getCategoryFields(this);">
+                <option>Select...</option>
+                <optgroup label="Manage">
+                    <option value="manage/sub-category-4">Sub Category #4</option>
+                    <option value="manage/sub-category-5">Sub Category #5</option>
+                    <option value="manage/sub-category-6">Sub Category #6</option>
+                </optgroup>
+                <optgroup label="General">
+                    <option value="general/sub-category-11">Sub Category #11</option>
+                    <option value="general/sub-category-12">Sub Category #12</option>
+                </optgroup>
+                <optgroup label="Deliver">
+                    <option value="deliver/sub-category-7">Sub Category #7</option>
+                    <option value="deliver/sub-category-8">Sub Category #8</option>
+                </optgroup>
+                <optgroup label="Analyze">
+                    <option value="analyze/sub-category-10">Sub Category #10</option>
+                    <option value="analyze/sub-category-9">Sub Category #9</option>
+                </optgroup>
+                <optgroup label="Create">
+                    <option value="create/sub-category-2">Sub Category #2</option>
+                    <option value="create/sub-category-1">Sub Category #1</option>
+                    <option value="create/sub-category-3">Sub Category #3</option>
+                </optgroup>
+            </select>
+        </form>
+        <div id="selected">
+            <div id="group">Group: <span id="group-name"></span></div>
+            <div id="subgroup">Sub-group: <span id="subgroup-name"></span></div>
+        </div>
+    </div>
+    <div class="column" id="column-right">
+        <div id="menu-container">
+            <div id="menu-icon"></div>
+            <div id="menu-button">Select...</div>
+            <div id="menu"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

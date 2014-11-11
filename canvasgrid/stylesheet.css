@@ -1,0 +1,46 @@
+* {
+    font-family: helvetica;
+}
+
+#content {
+    overflow: hidden;
+}
+
+#title {
+    margin: 20px 0 20px 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+#coord-tl {
+    float: left;
+}
+
+#canvas-container {
+}
+
+#canvas {
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+#debug {
+    border: 1px solid black;
+    float: left;
+    width: 400px;
+    height: 500px;
+    margin: 0 50px 0 50px;
+}
+
+#debugTitle {
+    width: 400px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    background: #ccc;
+    padding: 5px 0 5px 0;
+}
+
+td {
+    padding: 2px;
+}

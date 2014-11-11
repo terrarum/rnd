@@ -1,0 +1,91 @@
+#content {
+	width: 700px;
+	text-align: center;
+}
+
+.controls {
+	width: 600px;
+	text-align: center;
+	overflow: hidden;
+	margin: 0 auto 0 auto;
+	height: 50px;
+}
+
+.progressContainer {
+	border: 1px solid black;
+	width: 200px;
+	height: 10px;
+}
+
+.progressBar {
+	position: absolute;
+	background-color: #aaa;
+	height: 10px;
+	width: 0px;
+	z-index: 2;
+}
+
+.loadingBar {
+	position: absolute;
+	background-color: #ddd;
+	height: 10px;
+	width: 0px;
+	z-index: 1;
+}
+
+.timers {
+	height: 20px;
+	width: 200px;
+	overflow: hidden;
+}
+
+.timeDisplay {
+	overflow: hidden;
+	width: 204px;
+}
+
+.timerBoxes {
+	width: 90px;
+	float: left;
+	padding: 0 5px 0 5px;
+}
+
+#currentTime, #currentTimeAudio {
+	text-align: left;
+}
+
+#duration, #durationAudio {
+	text-align: right;
+}
+
+.volumeBox {
+	position: relative;
+	border: 1px solid black;
+	border-right: 0;
+	width: 6px;
+	height: 18px;
+	float: left;
+	cursor: pointer;
+}
+
+.volumeBox:last-of-type {
+	border-right: 1px solid black;
+}
+
+.controlItem {
+	float: left;
+	margin: 2px;
+	-webkit-user-select: none;
+}
+
+.button {
+	text-align: center;
+	width: 40px;
+	height: 20px;
+	background-color: #ddd;
+	padding: 2px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 5px 5px 5px #888;
+}

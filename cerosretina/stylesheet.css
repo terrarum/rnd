@@ -1,0 +1,215 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    background-color: #cccccc;
+}
+
+#container {
+    background-color: #fff;
+    width: 850px;
+    height: 500px;
+    padding: 0 75px 0 75px;
+    -webkit-box-shadow: 5px 5px 20px 0px #aaaaaa;
+    box-shadow:  5px 5px 20px 0px #aaaaaa;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -275px;
+    margin-left: -500px;
+}
+
+#client-logo{
+    width: 850px;
+    height: 170px;
+}
+
+#content {
+    width: 850px;
+	height: 330px;
+}
+
+/* Device images */
+#devices {
+    width: 850px;
+    height: 125px;
+    text-align: justify;
+}
+.device {
+    width: 174px;
+    display: inline-block;
+    text-align: center;
+}
+.device a {
+    display: inline-block;
+}
+#devices:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+/* Link icons */
+#icon-row {
+	margin-top: -23px;
+    text-align: justify;
+    z-index: 20;
+}
+.icon {
+    width: 174px;
+    display: inline-block;
+    text-align: center;
+}
+.icon a {
+    display: inline-block;
+}
+#icon-row:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+/* Icon labels */
+#icon-row-labels {
+    font-size: 15px;
+    color: #aaa;
+    font-family: Helvetica;
+    text-align: justify;
+}
+.label {
+    width: 174px;
+    display: inline-block;
+    text-align: center;
+}
+#icon-row-labels:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+#footer {
+    margin: 30px 0px 0px -75px;
+    width: 1000px;
+    height: 22px;
+}
+
+#ceros-logo {
+    background-image: url("img/ceros-logo@2x.png");
+    background-size: 75px 16px;
+    width: 75px;
+    height: 16px;
+    float: left;
+}
+
+#message {
+    float: right;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#web-device-container {
+    background-image: url("img/desktop-container@2x.png");
+    background-size: 175px 125px;
+    width: 175px;
+    height: 125px;
+}
+
+#web-content {
+    background: url("client/ceros-content@2x.png") no-repeat;
+    background-size: 161px 92px;
+    width: 161px;
+    height: 92px;
+    position: relative;
+    top: 7px;
+    left: 7px;
+}
+
+#embedded-device-container {
+    background-image: url("img/embed-container@2x.png");
+    background-size: 179px 104px;
+    width: 179px;
+    height: 104px;
+}
+
+#embed-content {
+    background: url("client/embed-content@2x.png") no-repeat;
+    background-size: 137px 86px;
+    width: 137px;
+    height: 86px;
+    position: relative;
+    top: 6px;
+    left: 21px;
+}
+
+#ipad-device-container {
+    background-image: url("img/ipad-container@2x.png");
+    background-size: 104px 80px;
+    width: 104px;
+    height: 80px;
+}
+
+#ipad-content {
+    background: url("client/ipad-content@2x.png") no-repeat;
+    background-size: 86px 64px;
+    width: 86px;
+    height: 64px;
+    position: relative;
+    top: 8px;
+    left: 9px;
+}
+
+#facebook-device-container {
+    background-image: url("img/desktop-container@2x.png");
+    background-size: 175px 125px;
+    width: 175px;
+    height: 125px;
+}
+
+#facebook-content {
+    background: url("client/facebook-content@2x.png") no-repeat;
+    background-size: 161px 92px;
+    width: 161px;
+    height: 92px;
+    position: relative;
+    top: 7px;
+    left: 7px;
+}
+
+#web-icon {
+    background-image: url("img/ceros-icon@2x.png");
+    background-size: 45px 45px;
+    width: 45px;
+    height: 45px;
+}
+
+#embedded-icon {
+    background-image: url("img/embed-icon@2x.png");
+    background-size: 45px 45px;
+    width: 45px;
+    height: 45px;
+}
+ 
+#ipad-icon {
+    background-image: url("img/ipad-icon@2x.png");
+    background-size: 45px 45px;
+    width: 45px;
+    height: 45px;
+}
+
+#facebook-icon {
+    background-image: url("img/facebook-icon@2x.png");
+    background-size: 45px 45px;
+    width: 45px;
+    height: 45px;
+}
+
+#line {
+    color: #aaa;
+    border: 0;
+    border-top: 1px solid #aaa;
+    margin-top: 50px;
+}

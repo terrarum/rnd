@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Auth</title>
+    <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="userauth.js"></script>
+    <link rel="stylesheet" href="../lib/normalize.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<div id="content">
+    <div class="column" id="column-left">
+        <form id="loginform">
+            <div class="header">Login</div>
+            <hr />
+            <div class="form-group">
+                <div class="label">Username</div>
+                <input type="text" id="username"><br />
+            </div>
+            <div class="form-group">
+                <div class="label">Password</div>
+                <input type="password" id="password">
+            </div>
+            <div class="form-group button-group">
+                <div id="rememberlabel">Remember me </div><div id="rememberform"><input type="checkbox" id="remember"></div>
+                <button type="submit" id="login">Log In</button>
+            </div>
+        </form>
+        <br />
+
+        <form id="privateform">
+            <div class="header">Private Data</div>
+            <hr>
+            <div class="form-group button-group">
+                <button type="submit" id="private">Get Data</button>
+            </div>
+        </form>
+
+        <form id="logoutform">
+            <div class="header">Log Out</div>
+            <hr>
+            <div class="form-group button-group">
+                <button type="submit" id="logout">Log Out</button>
+            </div>
+        </form>
+
+        <form id="registerform">
+            <div class="header">Register</div>
+            <hr />
+            <div class="form-group">
+                <div class="label">Username</div>
+                <input type="text" id="username-reg"><br />
+            </div>
+            <div class="form-group">
+                <div class="label">Password</div>
+                <input type="password" id="password-reg1">
+            </div>
+            <div class="form-group">
+                <div class="label">Verify</div>
+                <input type="password" id="password-reg2">
+            </div>
+            <div class="form-group button-group">
+                <button type="submit" id="register">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="column">
+        <div id="statusbox">
+            <div class="header status">Output</div>
+            <div id="loginstatus">Logged In: <span id="loggedin"></span></div>
+        </div>
+        <hr />
+        <div id="output">
+        </div>
+    </div>
+</div>
+</body>
+</html>

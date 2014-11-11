@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+
+    <div id="embedUrl" src="http://view.ceros.com/ceros-marketing/luxury-buying-trends/p/1"></div>
+
+    <textarea name="embed" id="embed" cols="30" rows="10"><iframe src style="border:0px #FFFFFF none;" id="cerosEmbed" name="cerosEmbed" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="465px" width="620px"></iframe><div style='font-family: Helvetica, Arial, sans-serif'><a href='http://www.ceros.com'>Ceros</a></div>
+    </textarea>
+
+    <script type="text/javascript">
+        $jQ = jQuery.noConflict();
+        $jQ(function() {
+            var embedCode = $jQ('#embed').html()
+            var embedUrl = $jQ('#embedUrl').attr("src");
+            embedCode = embedCode.replace('src', 'src="' + embedUrl + '"');
+            $jQ('#embed').html(embedCode)
+        })
+    </script>
+</div>
+</body>
+</html>

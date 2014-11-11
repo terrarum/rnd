@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #link {
+            text-decoration: none;
+            font-family: Helvetica;
+            color: #000000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 20px;
+            line-height: 20px;
+            width: 120px;
+            margin-top: -10px;
+            margin-left: -60px;
+            text-align: center;
+        }
+
+        #content {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        #content:hover {
+            background: #cccccc;
+        }
+    </style>
+    <script src="base64.js"></script>
+</head>
+<body>
+
+<div style="display:none;">
+    <div id="icalTitle"></div>
+    <div id="icalDescription"></div>
+    <div id="icalStartDate"></div>
+    <div id="icalDuration"></div>
+    <div id="icalUrl"></div>
+</div>
+
+<a id="link" href="ics.php">
+    <div id="content">
+        DOWNLOAD
+    </div>
+</a>
+
+<script type="text/javascript">
+    var title = Base64.encode("Ceros Webinar"),
+        url = Base64.encode("http://pages.ceros.com/webinar"),
+        description = Base64.encode("Welcome to the new Ceros Webinar!"),
+        startDate = Base64.encode("2013-10-10T16:00:00Z"),
+        duration = Base64.encode("PT1H30M");
+
+    $(function() {
+        var link = $("#link").attr('href');
+        link += "?title=" + encodeURIComponent(title)
+        link += "&description=" + encodeURIComponent(description)
+        link += "&url=" + encodeURIComponent(url)
+        link += "&startdate=" + encodeURIComponent(startDate)
+        link += "&duration=" + encodeURIComponent(duration)
+        $("#link").attr('href', link)
+    })
+</script>
+
+</body>
+</html>

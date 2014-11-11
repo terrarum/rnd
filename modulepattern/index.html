@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+
+	<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Module Loader!</h1>
+    </div>
+  </div>
+
+	<div class="container">
+    <div class="row">
+      <div class="col-md-4" id="col1"></div>
+      <div class="col-md-4" id="col2"></div>
+      <div class="col-md-4" id="col3"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  	// Initial setup for namespacing.
+  	window.Immediate = {}
+  </script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="modules/main.js"></script>
+	<script type="text/javascript" src="viewmodels/mainViewModel.js"></script>
+</body>
+</html>

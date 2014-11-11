@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"/>
+    <style>
+        .rowBorder {
+            margin: 5px 0 5px 0;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>doT</h1>
+
+    <div  id="examplesContainer" class="container">
+        <div class="row"></div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="doT.min.js"></script>
+    <script>
+        var tempFn = doT.template("" +
+            "{{~it.array :ex:index}}" +
+                "{{? index % 3 == 0}}<div class='row examplesRow'>{{? index !== 0}}<div class='span12 rowBorder'></div>{{?}}{{?}}" +
+                "<div class='span4 example'>" +
+                "<div class='brandName'>{{=ex.brandName}}</div>" +
+                "<div class='experienceName'>{{=ex.experienceType}}</div>" +
+                "<a href='{{=it.mainUrl}}' target='_blank'>" +
+                "<div class='previewContainer'>" +
+                "<img class='preview' src='/assets/img/examples/{{=ex.thumbUrl}}' />" +
+                "</div></a>" +
+                "<div class='view'>" +
+                "<div class='viewTitle'>VIEW AS:</div>" +
+                "<ul>" +
+                    "<li>" +
+                        "{{? ex.standalone}}<a href='{{=ex.standalone}}' target='_blank'><img class='icon standalone' src='/assets/img/examples/view-as-standalone.png' alt=''/>Full Browser Experience</a>{{?}}" +
+                        "{{? ex.embed}}<a href='{{=ex.embed}}' target='_blank'><img class='icon embed' src='/assets/img/examples/view-as-web.png' alt=''/>Website Embed</a>{{?}}" +
+                        "{{? ex.facebook}}<a href='{{=ex.facebook}}' target='_blank'><img class='icon facebook' src='/assets/img/examples/view-as-facebook.png' alt=''/>Facebook Embed</a>{{?}}" +
+                        "{{? ex.singleAsset}}<a href='{{=ex.singleAsset}}' target='_blank'><img class='icon embed' src='/assets/img/examples/view-as-web.png' alt=''/>Single Asset</a>{{?}}" +
+                    "</li>" +
+                "</ul>" +
+                "</div></div>" +
+                "{{? index % 3 == 2}}</div>{{?}}" +
+            "{{~}}");
+
+        var experiences = {
+            "array": [
+                {
+                    brandName: "Mashable",
+                    experienceType: "Infographic",
+                    thumbUrl: "mashable-kiwichampion.jpg",
+                    mainUrl: "http://mashable.com/2013/11/25/kiwi-gardner-basketball-youtube/",
+                    standalone: false,
+                    facebook: false,
+                    embed: "http://mashable.com/2013/11/25/kiwi-gardner-basketball-youtube/"
+                },
+                {
+                    brandName: "Moncler",
+                    experienceType: "Interactive Magazine",
+                    thumbUrl: "moncler-lunette-gazette.jpg",
+                    mainUrl: "http://pharrell.monclerlunettes.com/lunette-gazette/p/1",
+                    standalone: "http://pharrell.monclerlunettes.com/lunette-gazette/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Shop Bazaar",
+                    experienceType: "Product Guide",
+                    thumbUrl: "shopbazaar-theguidefallbags.jpg",
+                    mainUrl: "http://shop.harpersbazaar.com/trends/the-best-new-bags",
+                    standalone: false,
+                    facebook: false,
+                    embed: "http://shop.harpersbazaar.com/trends/the-best-new-bags"
+                },
+                {
+                    brandName: "Homeland",
+                    experienceType: "Microsite",
+                    thumbUrl: "homeland.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-mobile-sales-demo/homeland/p/1",
+                    standalone: "http://view.ceros.com/ceros-mobile-sales-demo/homeland/p/1",
+                    facebook: "https://apps.facebook.com/showtimedemo/",
+                    embed: false
+                },
+                {
+                    brandName: "Tourneau",
+                    experienceType: "Catalog",
+                    thumbUrl: "tourneau.jpg",
+                    mainUrl: "http://www.tourneau.com/catalog/editorial_fourcolumn.jsp?pageName=tourneauKnowsHolidayCatalogLuxuryWatches",
+                    standalone: false,
+                    facebook: false,
+                    embed: "http://www.tourneau.com/catalog/editorial_fourcolumn.jsp?pageName=tourneauKnowsHolidayCatalogLuxuryWatches"
+                },
+                {
+                    brandName: "Acura",
+                    experienceType: "Brochure",
+                    thumbUrl: "honda-rlx.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-mobile-sales-demo/2014rlx-copy-copy/p/1",
+                    standalone: "http://view.ceros.com/ceros-mobile-sales-demo/2014rlx-copy-copy/p/1",
+                    facebook: "https://apps.facebook.com/acura_demo/",
+                    embed: "https://googledrive.com/host/0By7E32p8xD51ZHE0eU8zUVdIR2s/"
+                },
+                {
+                    brandName: "Acura",
+                    experienceType: "Homepage Banner",
+                    thumbUrl: "honda-banner.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-mobile-sales-demo/acura-main-banner/p/1",
+                    standalone: false,
+                    facebook: false,
+                    embed: false,
+                    singleAsset: "http://view.ceros.com/ceros-mobile-sales-demo/acura-main-banner/p/1"
+                },
+                {
+                    brandName: "Monsoon",
+                    experienceType: "Landing Page",
+                    thumbUrl: "monsoonaccessorize-waystowear.jpg",
+                    mainUrl: "http://uk.monsoon.co.uk/uk/ways-to-wear-the-statement-jacket",
+                    standalone: false,
+                    facebook: "https://www.facebook.com/MonsoonUK/app_190322544333196",
+                    embed: "http://uk.monsoon.co.uk/uk/ways-to-wear-the-statement-jacket"
+                },
+                {
+                    brandName: "Peugeot",
+                    experienceType: "Interactive Magazine",
+                    thumbUrl: "peugeot-emotionwinter.jpg",
+                    mainUrl: "http://view.ceros.com/peugeot1/emotion-winter-2013/p/1",
+                    standalone: "http://view.ceros.com/peugeot1/emotion-winter-2013/p/1",
+                    facebook: "https://www.facebook.com/peugeotuk/app_124561191002470",
+                    embed: false
+                },
+                {
+                    brandName: "St Tropez",
+                    experienceType: "Shoppable PR Promotion",
+                    thumbUrl: "sttropez-ultimatetan.jpg",
+                    mainUrl: "https://view.ceros.com/ceros-mobile-sales-demo/the-ultimate-tan/p/1",
+                    standalone: "https://view.ceros.com/ceros-mobile-sales-demo/the-ultimate-tan/p/1",
+                    facebook: "https://apps.facebook.com/sttropez_demo/",
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbNmNBQW1mY0xWM2s/"
+                },
+                {
+                    brandName: "The Brooklyn Nets",
+                    experienceType: "PR Promotion",
+                    thumbUrl: "brooklynnets-fansincedayone.jpg",
+                    mainUrl: "https://view.ceros.com/ceros-mobile-sales-demo/nets/p/1",
+                    standalone: "https://view.ceros.com/ceros-mobile-sales-demo/nets/p/1",
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbZFE4OWsyMjZkWTg/"
+                },
+                {
+                    brandName: "Vacheron",
+                    experienceType: "PR Promotion",
+                    thumbUrl: "vacheronconstantin-newboutique.jpg",
+                    mainUrl: "http://view.ceros.com/client-training/vacheron-constantin/p/1",
+                    standalone: "http://view.ceros.com/client-training/vacheron-constantin/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Harrods",
+                    experienceType: "B2B Magazine",
+                    thumbUrl: "harrods-luxurypost.jpg",
+                    mainUrl: "http://view.ceros.com/harrods/july-2013/p/1",
+                    standalone: "http://view.ceros.com/harrods/july-2013/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Belstaff",
+                    experienceType: "Interactive Catalog",
+                    thumbUrl: "belstaff-goodwood.jpg",
+                    mainUrl: "https://view.ceros.com/ceros-mobile-sales-demo/goodwood-sports-and-racing/p/1",
+                    standalone: "https://view.ceros.com/ceros-mobile-sales-demo/goodwood-sports-and-racing/p/1",
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbTm84c1dza1FldmM/"
+                },
+                {
+                    brandName: "Liberty",
+                    experienceType: "Ecommerce Newsletter",
+                    thumbUrl: "liberty-sewliberty.jpg",
+                    mainUrl: "http://view.ceros.com/liberty/sew-liberty-issue-2/p/1",
+                    standalone: "http://view.ceros.com/liberty/sew-liberty-issue-2/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "First Choice",
+                    experienceType: "Interactive Holiday Brochure",
+                    thumbUrl: "firstchoice-summersun.jpg",
+                    mainUrl: "https://view.ceros.com/ceros-mobile-sales-demo/summer-sun/p/1",
+                    standalone: "https://view.ceros.com/ceros-mobile-sales-demo/summer-sun/p/1",
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbRnNmM05TR1g5VFU/"
+                },
+                {
+                    brandName: "Crush",
+                    experienceType: "Interactive Magazine",
+                    thumbUrl: "crush-tasteofcolour27.jpg",
+                    mainUrl: "https://view.ceros.com/petal/crush-27/p/1",
+                    standalone: "https://view.ceros.com/petal/crush-27/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Miss Bikini",
+                    experienceType: "Catwalk Lookbook",
+                    thumbUrl: "missbikini-catwalklookbook.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-mobile-sales-demo/spring-summer-13/p/1",
+                    standalone: "http://view.ceros.com/ceros-mobile-sales-demo/spring-summer-13/p/1",
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbbzI2ZnM5aUZkd2c/"
+                },
+                {
+                    brandName: "Tourneau",
+                    experienceType: "Holiday Gift Guide",
+                    thumbUrl: "tourneau-watchcatalog.jpg",
+                    mainUrl: "http://www.tourneau.com/catalog/editorial_fourcolumn.jsp?pageName=tourneauKnowsGiftGuide",
+                    standalone: false,
+                    facebook: false,
+                    embed: "http://www.tourneau.com/catalog/editorial_fourcolumn.jsp?pageName=tourneauKnowsGiftGuide"
+                },
+                {
+                    brandName: "Citroën",
+                    experienceType: "Interactive Brochure",
+                    thumbUrl: "citroen-insightautumn.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-mobile-sales-demo/insight-autumn-2013/p/1",
+                    standalone: "http://view.ceros.com/ceros-mobile-sales-demo/insight-autumn-2013/p/1",
+                    facebook: "https://apps.facebook.com/citroendemo/",
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbM2J6clJnQXNDQk0/"
+                },
+                {
+                    brandName: "Cotton Traders",
+                    experienceType: "Interactive Catalog",
+                    thumbUrl: "cottontraders-spring2013.jpg",
+                    mainUrl: "https://googledrive.com/host/0Bx73O1o9N3LbYTBZWE51NU1QOWM/",
+                    standalone: false,
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbYTBZWE51NU1QOWM/"
+                },
+                {
+                    brandName: "Peugeot",
+                    experienceType: "CRM Engagement",
+                    thumbUrl: "peugeot-packa.jpg",
+                    mainUrl: "https://view.ceros.com/peugeot/pack-a/p/1",
+                    standalone: "https://view.ceros.com/peugeot/pack-a/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Pronaca",
+                    experienceType: "B2B Interactive Magazine",
+                    thumbUrl: "pronaca-june2013.jpg",
+                    mainUrl: "https://view.ceros.com/pronaca/pronaca-tqma-jun-2013/p/1",
+                    standalone: "https://view.ceros.com/pronaca/pronaca-tqma-jun-2013/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "B&Q",
+                    experienceType: "Interactive Catalog",
+                    thumbUrl: "b&q-yourhome.jpg",
+                    mainUrl: "http://view.ceros.com/b-and-q/decor-trends-spring-summer-2013/p/1",
+                    standalone: "http://view.ceros.com/b-and-q/decor-trends-spring-summer-2013/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Penhaligons",
+                    experienceType: "Brand Promotion",
+                    thumbUrl: "penhaligons-summer.jpg",
+                    mainUrl: "http://tommydark0.tumblr.com/",
+                    standalone: false,
+                    facebook: false,
+                    embed: "http://tommydark0.tumblr.com/"
+                },
+                {
+                    brandName: "Ralph Lauren",
+                    experienceType: "Editorialised Catalog",
+                    thumbUrl: "ralphlauren-spring2013.jpg",
+                    mainUrl: "https://view.ceros.com/ceros-mobile-sales-demo/ralph-lauren-copy/p/1",
+                    standalone: "https://view.ceros.com/ceros-mobile-sales-demo/ralph-lauren-copy/p/1",
+                    facebook: "https://apps.facebook.com/rl_demo/",
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbdjlZRlBoWWlQUG8/"
+                },
+                {
+                    brandName: "Shop Bazaar",
+                    experienceType: "Product Guide",
+                    thumbUrl: "shopbazaar-shirttales.jpg",
+                    mainUrl: "http://shop.harpersbazaar.com/trends/shirt-tales",
+                    standalone: false,
+                    facebook: false,
+                    embed: "http://shop.harpersbazaar.com/trends/shirt-tales"
+                },
+                {
+                    brandName: "Kering",
+                    experienceType: "B2B PR",
+                    thumbUrl: "kering-ataglance.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-mobile-sales-demo/at-a-glance-copy/p/1",
+                    standalone: "http://view.ceros.com/ceros-mobile-sales-demo/at-a-glance-copy/p/1",
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbSnJTeW16M2s1eVk/"
+                },
+                {
+                    brandName: "Alternative Apparel",
+                    experienceType: "Interactive Catalog",
+                    thumbUrl: "alternativeapparel-summer2013.jpg",
+                    mainUrl: "https://view.ceros.com/ceros-mobile-sales-demo/summer-2013/p/1",
+                    standalone: "https://view.ceros.com/ceros-mobile-sales-demo/summer-2013/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Lot18",
+                    experienceType: "Interactive Wine Catalog",
+                    thumbUrl: "lot18-anniversarywines.jpg",
+                    mainUrl: "https://view.ceros.com/paul-fifield/anniversary-wines/p/1",
+                    standalone: "https://view.ceros.com/paul-fifield/anniversary-wines/p/1",
+                    facebook: false,
+                    embed: "https://googledrive.com/host/0Bx73O1o9N3LbQ3JHU0ZySFVmc1U/"
+                },
+                {
+                    brandName: "B&Q",
+                    experienceType: "Interactive Catalog",
+                    thumbUrl: "bandq-gardenliving.jpg",
+                    mainUrl: "https://view.ceros.com/b-and-q/march-june-2013/p/1",
+                    standalone: "https://view.ceros.com/b-and-q/march-june-2013/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Contently",
+                    experienceType: "Guide",
+                    thumbUrl: "contently-brandnewsroom.jpg",
+                    mainUrl: "http://view.ceros.com/contently/brand-newsroom/p/1",
+                    standalone: "http://view.ceros.com/contently/brand-newsroom/p/1",
+                    facebook: false,
+                    embed: false
+                },
+                {
+                    brandName: "Ceros",
+                    experienceType: "Infographic",
+                    thumbUrl: "ceros-luxurytrends.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-marketing/luxury-buying-trends/p/1",
+                    standalone: "http://view.ceros.com/ceros-marketing/luxury-buying-trends/p/1",
+                    facebook: false,
+                    embed: "http://www.ceros.com/blog/2013/9/9/infographic-luxury-buying-trends-in-asia-india-and-latin-america"
+                },
+                {
+                    brandName: "Ceros",
+                    experienceType: "Infographic",
+                    thumbUrl: "ceros-popupinfographic.jpg",
+                    mainUrl: "https://apps.facebook.com/popup_infographic/",
+                    standalone: false,
+                    facebook: "https://apps.facebook.com/popup_infographic/",
+                    embed: false
+                },
+                {
+                    brandName: "Ceros",
+                    experienceType: "B2B Marketing",
+                    thumbUrl: "ceros-shoestring.jpg",
+                    mainUrl: "http://view.ceros.com/ceros-marketing/shoestring/p/1",
+                    standalone: "http://view.ceros.com/ceros-marketing/shoestring/p/1",
+                    facebook: false,
+                    embed: false
+                }
+            ]
+        }
+
+        var resultText = tempFn(experiences);
+
+        $('#examplesContainer').html(resultText)
+    </script>
+</body>
+</html>

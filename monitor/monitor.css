@@ -1,0 +1,85 @@
+* {
+	font-family: helvetica;
+	font-size: 10pt;
+}
+
+a {
+	text-decoration: none;
+	color: #00e;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.module {
+	margin: 5px;
+	background-color: white;
+	width: 32%;
+	float: left;
+}
+
+.moduleTitle {
+	font-family: 'Orbitron', helvetica;
+	font-size: 20pt;
+	font-weight: 700;
+	padding: 5px 0 5px 2px;
+	float: left;
+}
+
+.subTitle {
+	float: right;
+	margin-top: 10px;
+}
+
+.moduleContent {
+	clear: both;
+	border: 1px solid black;
+	height: 300px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.case {
+	margin: 2px;
+	padding: 5px;
+}
+
+.game {
+	height: 50px;
+	padding: 5px;
+	border-bottom: 1px solid grey;
+}
+
+.gameLogo {
+	float: left;
+	margin-right: 4px;
+}
+
+.gameTitle {
+	font-size: 14pt;
+}
+
+.gameInformation {
+	margin-top: 15px;
+}
+
+.platforms {
+	float: right;
+}
+
+.odd {
+	background-color: #66ffdd;
+}
+
+.even {
+	background-color: #00ffee;
+}
+
+.last {
+	border-bottom: none !important;
+}
+
+.lastSep {
+	display: none;
+}

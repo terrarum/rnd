@@ -1,0 +1,78 @@
+* {
+    color: #666;
+}
+
+.header {
+    color: #000;
+}
+
+.status {
+    float: left;
+    width: 200px;
+}
+
+#content {
+    overflow: hidden;
+    width: 800px;
+    margin: 80px auto;
+}
+
+input {
+    border: 1px solid #aaa;
+    padding: 5px;
+    color: #000;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #aaa;
+    padding: 5px 0 5px 0;
+}
+
+.label {
+    width: 85px;
+    float: left;
+    height: 30px;
+    line-height: 28px;
+}
+
+.form-group {
+    padding-bottom: 10px;
+}
+
+.column {
+    float: left;
+    margin-right: 50px;
+}
+
+#column-left {
+    width: 273px;
+}
+
+#output {
+    width: 400px;
+}
+
+.button-group {
+    text-align: right;
+}
+
+button {
+    width: 100px;
+}
+
+#rememberlabel {
+    float: left;
+    font-size: 13px;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+#rememberform {
+    float: left;
+    margin-top: 5px;
+}
+
+.left {
+    float: left;
+}

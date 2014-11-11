@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+
+</head>
+<body>
+        <div id="title">Scroll<br>&darr;</div>
+        <div id="container">
+            <div id="cloud"></div>
+
+            <div class="icon" id="imac"></div>
+            <div class="line" id="imac-line"></div>
+
+            <div class="icon" id="facebook"></div>
+            <div class="line" id="facebook-line"></div>
+
+            <div class="icon" id="tumblr"></div>
+            <div class="line" id="tumblr-line"></div>
+
+            <div class="icon" id="iphone"></div>
+            <div class="line" id="iphone-line"></div>
+
+            <div class="icon" id="ipad"></div>
+            <div class="line" id="ipad-line"></div>
+
+            <div class="icon" id="laptop"></div>
+            <div class="line" id="laptop-line"></div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.visible.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                console.log('HIDING ALL')
+                $('.icon').hide();
+                $('.line').hide();
+                var played = true;
+                $(window).scroll(function() {
+                    if ($('#container').visible(true) && played) {
+                        console.log('SHOWING ALL')
+                        played = false;
+                        $('.icon').show();
+                        $('.line').show();
+
+                        $('#imac').css("-webkit-animation", "imac 2s");
+                        $('#imac').css("animation", "imac 2s");
+                        $('#imac-line').css("-webkit-animation", "imac-line 4s");
+                        $('#imac-line').css("animation", "imac-line 4s");
+
+                        $('#facebook').css("-webkit-animation", "facebook 2s");
+                        $('#facebook').css("animation", "facebook 2s");
+                        $('#facebook-line').css("-webkit-animation", "facebook-line 4s");
+                        $('#facebook-line').css("animation", "facebook-line 4s");
+
+                        $('#tumblr').css("-webkit-animation", "tumblr 2s");
+                        $('#tumblr').css("animation", "tumblr 2s");
+                        $('#tumblr-line').css("-webkit-animation", "tumblr-line 4s");
+                        $('#tumblr-line').css("animation", "tumblr-line 4s");
+
+                        $('#iphone').css("-webkit-animation", "iphone 2s");
+                        $('#iphone').css("animation", "iphone 2s");
+                        $('#iphone-line').css("-webkit-animation", "iphone-line 4s");
+                        $('#iphone-line').css("animation", "iphone-line 4s");
+
+                        $('#ipad').css("-webkit-animation", "ipad 2s");
+                        $('#ipad').css("animation", "ipad 2s");
+                        $('#ipad-line').css("-webkit-animation", "ipad-line 4s");
+                        $('#ipad-line').css("animation", "ipad-line 4s");
+
+                        $('#laptop').css("-webkit-animation", "laptop 2s");
+                        $('#laptop').css("animation", "laptop 2s");
+                        $('#laptop-line').css("-webkit-animation", "laptop-line 4s");
+                        $('#laptop-line').css("animation", "laptop-line 4s");
+
+                    }
+                })
+            })
+        </script>
+</body>
+</html>
