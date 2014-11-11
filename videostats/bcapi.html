@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Media API Sample</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .brightcove-pod {
+            width: 650px;
+            height: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="brightcove-pod">
+    <!-- Start of Brightcove Player -->
+    <script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    <object id="brightcove-pod-object" class="BrightcoveExperience">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="650" />
+        <param name="height" value="415" />
+        <param name="playerID" value="961742090001" />
+        <param name="playerKey" value="AQ~~%2CAAAAEEcciGk~%2Cooa8R8Rr-s1lVams7LZcqqnAak30zi7h" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        <param name="includeAPI" value="true" />
+        <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+    </object>
+    </div>
+    <script type="text/javascript">
+        // Initialise the player.
+        brightcove.createExperiences();
+        // Namespace to keep all the "global" vars together.
+        var BCL = {};
+        // Event listener for the player being ready.
+        BCL.onTemplateReady = function (event) {
+            BCL.player = brightcove.api.getExperience("brightcove-pod-object");
+            // Get a reference to the video player.
+            BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+            // Load the video
+            BCL.videoPlayer.cueVideoByID(83271682001);
+        }
+    </script>
+</body>
+</html>

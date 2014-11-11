@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iFrame</title>
+    <link rel="stylesheet" href="lib/normalize.css"/>
+    <style>
+        .container {
+            width: 300px;
+            height: 250px;
+            background: #555555;
+            text-align: center;
+            font-family: helvetica, arial;
+            display: table;
+        }
+        a {
+            height: 100%;
+            width: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://www.google.com/search?q=hats" target="_blank">
+            THIS IS AN ADVERT<br><br>
+            CLICK IT TO WIN A HAT<br><br>
+            SWIPE IT TO NOT
+        </a>
+    </div>
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script>
+        (function($) {
+            $(function() {
+                $('.container').on({
+                    'touchstart': function() {
+                        console.log("iframe touch start");
+                    },
+                    'touchmove': function() {
+                        console.log("iframe touch move");
+                    },
+                    'touchend': function() {
+                        console.log("iframe touch end");
+                    }
+                });
+            })
+        })(jQuery)
+    </script>
+</body>
+</html>

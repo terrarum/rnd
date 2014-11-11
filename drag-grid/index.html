@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>Drag Grid</title>
+	    <meta name="description" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" type="text/css" href="lib/normalize.css">
+	    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	</head>
+
+	<body>
+
+		<div class="container js-container">
+			<div class="grid-container js-grid-container">
+				<div class="grid js-grid"></div>
+			</div>
+			<div class="sidebar js-sidebar">
+				<div class="node-list js-node-list">
+					<div class="node-list-title">Node List</div>
+				</div>
+			</div>
+
+
+			<div class="node-modal js-node-modal">
+				<div class="modal-text modal-text-title">Page Name:</div>
+				<input type="text" class="modal-text node-title js-node-title">
+				<div class="modal-text modal-text-body">Page Text</div>
+				<textarea class="modal-text node-body js-node-body"></textarea>
+				<div class="modal-button-container">
+					<div class="button button-save js-button-save">Save</div>
+					<div class="button button-cancel js-button-cancel">Cancel</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript" src="lib/underscore-min.js"></script>
+		<script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="lib/jquery-ui-1.10.4.min.js"></script>
+		<script type="text/javascript" src="lib/dom.jsPlumb-1.6.2-min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+
+	</body>
+</html>
+
+<!--
+Save a node
+Clear all of its connections
+Check for aything inside of double square brackets
+Make an array of these
+Compare these names to the name of every node on the screen
+If any match, connect them
+If a named node does not exist, create it
+-->

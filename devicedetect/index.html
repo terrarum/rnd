@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device Detect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+
+    <style>
+        body {
+            font-size: 20px;
+        }
+        .labels {
+            text-align: right;
+        }
+        .container {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-4">
+                <div class="labels">Device:</div>
+            </div>
+            <div class="col-xs-5 col-sm-2">
+                <div class="device"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-4">
+                <div class="labels">Orientation:</div>
+            </div>
+            <div class="col-xs-5 col-sm-2">
+                <div class="orientation"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-4">
+                <div class="labels">Touch:</div>
+            </div>
+            <div class="col-xs-5 col-sm-2">
+                <div class="has-touch"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-4">
+                <div class="labels">Width:</div>
+            </div>
+            <div class="col-xs-5 col-sm-2">
+                <div class="width"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="modernizr.custom.73546.js"></script>
+    <script src="detectizr.min.js"></script>
+    <script src="device.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="devicedetect.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sidebar Test</title>
+
+    <link rel="stylesheet" href="lib/normalize.css"/>
+    <style>
+        .container {
+            width: 768px;
+            margin: auto;
+            text-align: center;
+        }
+        .iframe-container {
+            margin-top: 100px;
+            width: 300px;
+            height: 250px;
+            display: inline-block;
+            position: relative;
+        }
+        .iframe {
+            width: 300px;
+            height: 250px;
+        }
+        .swipe-handler {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="iframe-container">
+            <iframe class="iframe" src="iframe.html" frameborder="0"></iframe>
+            <div class="swipe-handler"></div>
+        </div>
+    </div>
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script>
+        (function($) {
+            $(function() {
+                $('.swipe-handler').on({
+                    'click': function() {
+                        console.log(" AHHHHHHHHHHHHHHHHHHHHHH")
+                    },
+                    'touchstart': function(ev) {
+//                        ev.stopPropagation();
+                        ev.preventDefault();
+                        console.log("touchstart");
+                    },
+                    'touchmove': function(ev) {
+//                        ev.stopPropagation();
+                        ev.preventDefault();
+                        console.log("touchmove");
+                    },
+                    'touchend': function(ev) {
+//                        ev.stopPropagation();
+                        ev.preventDefault();
+                        console.log("touchend");
+                    }
+                });
+            })
+        })(jQuery)
+    </script>
+</body>
+</html>
