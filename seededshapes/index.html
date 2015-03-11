@@ -2,16 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Seed JS</title>
+    <title>Seeded Shapes</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <style>
+
+        .canvas {
+            border: 1px solid black;
+            margin: auto;
+            display: block;
+        }
+
+        .seed-input {
+            margin-bottom: 20px;
+        }
+
+        .seed-input > div:first-child {
+            text-align: right;
+            font-size: 20px;
+        }
+
+    </style>
 </head>
 <body>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Seed JS</h1>
+                <h1>Seeded Shapes</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row seed-input">
+            <div class="col-sm-2">
+                <label for="seed">Type stuff here:</label>
+            </div>
+            <div class="col-sm-10">
+                <input type="text" class="form-control js-seed" id="seed">
             </div>
         </div>
     </div>
@@ -19,12 +48,20 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <form>
-                    <div class="form-group">
-                        <label for="seed">Enter Seed</label>
-                        <input type="text" class="form-control js-seed" id="seed">
-                    </div>
-                </form>
+                <canvas width="800" height="600" class="canvas js-canvas">
+
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2>What Is This?</h2>
+                <p>The text you enter in the textfield at the top of the page will always result in the same drawing. Try opening the page in another tab and entering the same text; the output will be the same.</p>
+                <p>This is because the text that is entered at the top is the 'seed' from which the circles, squares, lines and their colours are generated.</p>
+                <p>The seed is used to generate three random numbers. These numbers are then used to seed three new random number generators. Those generators are then called 20 times each, and the output is used to set the various values required to draw shapes in the canvas.</p>
             </div>
         </div>
     </div>
@@ -32,12 +69,6 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-12">
-                <div class="seed">
-                    Seed: <span class="js-seed-out"></span>
-                    <hr/>
-                </div>
-            </div>
             <div class="col-sm-3">
                 <div class="output">
                     <h3>Initial</h3>
