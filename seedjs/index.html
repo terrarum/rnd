@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seed JS</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Seed JS</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form>
+                    <div class="form-group">
+                        <label for="seed">Enter Seed</label>
+                        <input type="text" class="form-control js-seed" id="seed">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="seed">
+                    Seed: <span class="js-seed-out"></span>
+                    <hr/>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="output">
+                    <h3>Initial</h3>
+                    <hr/>
+                    <span class="js-output-init js-clear"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="output">
+                    <h3>Generator 1</h3>
+                    <hr/>
+                    <span class="js-output-0 js-clear"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="output">
+                    <h3>Generator 2</h3>
+                    <hr/>
+                    <span class="js-output-1 js-clear"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="output">
+                    <h3>Generator 3</h3>
+                    <hr/>
+                    <span class="js-output-2 js-clear"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.11/seedrandom.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.4.0/lodash.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
